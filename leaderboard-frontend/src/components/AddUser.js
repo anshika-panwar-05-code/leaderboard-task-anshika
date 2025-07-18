@@ -11,7 +11,7 @@ const AddUser = ({ refreshLeaderboard }) => {
             return;
         }
         try {
-            const res = await axios.post('http://localhost:5000/api/users', { name });
+            const res = await axios.post('https://leaderboard-task-anshika.onrender.com/api/users', { name });
             setMessage(`User ${res.data.name} added successfully!`);
             setName('');
             refreshLeaderboard();
