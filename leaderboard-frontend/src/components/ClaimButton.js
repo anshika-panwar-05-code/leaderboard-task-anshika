@@ -10,7 +10,7 @@ const ClaimButton = ({ selectedUser, refreshLeaderboard }) => {
             return;
         }
         try {
-            const res = await axios.post(`http://localhost:5000/api/claim/${selectedUser}`);
+            const res = await axios.post(`https://leaderboard-task-anshika.onrender.com/api/claim/${selectedUser}`);
             setMessage(res.data.message);
             refreshLeaderboard();
         } catch (error) {
