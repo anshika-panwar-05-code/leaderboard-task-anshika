@@ -8,7 +8,16 @@ const userRoutes = require('./routes/userRoutes');
 connectDB();
 
 const app=express();
-app.use(cors());
+const allowedOrigins = [
+  'https://leaderboard-task-anshika-1.onrender.com', // frontend render URL
+  'http://localhost:3000' // for local testing
+];
+
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use(express.json());
 
 app.use('/api',userRoutes);
